@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f4f3f0;
+  color: #1e1e1c;
+  min-height: 100vh;
+}
+
+/* ── Layout ── */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: #1e1e1c;
+  padding: 16px 32px;
+  border-bottom: 3px solid #e8a020;
+}
+
+.header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.app-tagline {
+  font-size: 12px;
+  color: #999896;
+  margin-top: 2px;
+}
+
+.app-main {
+  flex: 1;
+  max-width: 780px;
+  width: 100%;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.app-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #999896;
+  padding: 20px;
+  border-top: 1px solid #e2e0dc;
+}
+
+/* ── Cards ── */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e0dc;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e1e1c;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title span.icon {
+  font-size: 16px;
+}
+
+/* ── File inputs ── */
+.file-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.file-slot {
+  border: 1.5px dashed #c8c6c0;
+  border-radius: 8px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s;
+  position: relative;
+}
+
+.file-slot:hover {
+  border-color: #e8a020;
+  background: #fffbf2;
+}
+
+.file-slot.selected {
+  border-style: solid;
+  border-color: #2e8a4a;
+  background: #f2faf4;
+}
+
+.file-slot input[type="file"] {
+  display: none;
+}
+
+.file-slot-icon {
+  font-size: 26px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.file-slot-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e1e1c;
+  margin-bottom: 4px;
+}
+
+.file-slot-hint {
+  font-size: 11px;
+  color: #888784;
+}
+
+.file-slot-name {
+  font-size: 12px;
+  color: #2e8a4a;
+  font-weight: 500;
+  margin-top: 6px;
+  word-break: break-all;
+}
+
+/* ── Button ── */
+.btn-generate {
+  width: 100%;
+  padding: 12px;
+  background: #1e1e1c;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s, opacity 0.18s;
+  letter-spacing: 0.3px;
+}
+
+.btn-generate:hover:not(:disabled) {
+  background: #333330;
+}
+
+.btn-generate:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-generate.loading {
+  background: #444441;
+}
+
+/* ── Status / alert ── */
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.alert-error {
+  background: #fff2f2;
+  border: 1px solid #f5c0c0;
+  color: #b02020;
+}
+
+.alert-info {
+  background: #f0f6ff;
+  border: 1px solid #bcd4f5;
+  color: #1a4f9c;
+}
+
+.alert-success {
+  background: #f2faf4;
+  border: 1px solid #b0dfc0;
+  color: #1e6b38;
+}
+
+/* ── Progress steps ── */
+.progress-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.progress-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #888784;
+  transition: color 0.3s;
+}
+
+.progress-item.done {
+  color: #2e8a4a;
+}
+
+.progress-item.active {
+  color: #1e1e1c;
+  font-weight: 500;
+}
+
+.progress-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid #c8c6c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  flex-shrink: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.progress-item.done .progress-dot {
+  background: #2e8a4a;
+  border-color: #2e8a4a;
+  color: #fff;
+}
+
+.progress-item.active .progress-dot {
+  border-color: #e8a020;
+  color: #e8a020;
+}
+
+/* ── Spinner ── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* ── Report output ── */
+.report-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.meta-chip {
+  background: #f4f3f0;
+  border: 1px solid #e2e0dc;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  color: #555452;
+}
+
+.meta-chip strong {
+  color: #1e1e1c;
+}
+
+.report-output {
+  background: #fafaf8;
+  border: 1px solid #e2e0dc;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: #2a2a28;
+  white-space: pre-wrap;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.report-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn-secondary {
+  padding: 8px 16px;
+  background: transparent;
+  color: #1e1e1c;
+  border: 1px solid #c8c6c0;
+  border-radius: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-secondary:hover {
+  background: #f4f3f0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .file-grid {
+    grid-template-columns: 1fr;
+  }
+  .app-header {
+    padding: 14px 16px;
+  }
+  .app-main {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+}
