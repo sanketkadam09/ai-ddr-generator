@@ -59,6 +59,9 @@ Response sent to frontend
 Displayed in UI
 AI Prompt Design
 
+<img width="1267" height="893" alt="Screenshot 2026-05-06 093913" src="https://github.com/user-attachments/assets/f8f0f15e-49cb-4e7c-9b36-1cdfccc2c230" />
+
+
 The system ensures:
 
 No hallucination
