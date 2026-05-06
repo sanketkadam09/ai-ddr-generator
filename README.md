@@ -12,7 +12,11 @@ Generates structured DDR report
 Handles missing/conflicting data
 Stores generated reports in database
 
+<img width="1149" height="909" alt="Screenshot 2026-05-06 094113" src="https://github.com/user-attachments/assets/39d74189-9d20-4e6f-adbf-57626a497ea0" />
+
+
 System Architecture
+
 
 Frontend (React)
       ↓
